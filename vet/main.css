@@ -94,6 +94,16 @@ ul {
   color: #333333;
 }
 
+.contact-link:hover{
+  cursor: pointer;
+  color: rgb(255,189,84);
+}
+
+.contact-link:hover:active{
+  cursor: pointer;
+  color: rgb(131,131,131);
+}
+
 .work-hours {
   display: flex;
   gap: 17px;
@@ -136,6 +146,17 @@ ul {
 .logo-link {
   position: absolute;
   top: -18px;
+}
+.logo{
+  transition: opacity 0.3s ease;
+}
+
+.logo:hover{
+  opacity: 0.8; 
+}
+
+.logo:active {
+  opacity: 0.5;
 }
 
 .navigation-menu {
@@ -237,11 +258,27 @@ ul {
 .services {
   width: 181px;
   background-color: #333;
-  border-color: #333;
+  border: none;
   border-radius: 3px;
   color: white;
   padding: 15px 48px;
   margin-bottom: 93px;
+
+}
+
+.services:hover{
+  cursor: pointer;
+  background-color: rgb(255,189,84);
+  border-color: rgb(255,189,84);
+  color: rgb(51,51,51);
+  transition-duration: 0.3s;
+}
+
+.services:hover:active{
+  background-color: rgb(253,213,150);
+  color: rgb(130,130,130);
+  transition-duration: 0.3s;
+
 }
 
 
@@ -332,26 +369,65 @@ ul {
   justify-content: center;
 }
 
-.services__list::before {
-  background-image: url("./pics/leftswipe.svg");
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 14px;
-  height: 25.92px;
+.services__list::before,
+.services__list::after {
+    background-size: auto;
+    background-repeat: no-repeat;
+    width: 14px;
+    height: 25.92px;
+    padding: 10px; 
+    content: "";
+    transition: opacity 0.3s ease, background-color 0.3s ease;
+}
+.services__list::before:hover {
+  background-color: white;
+}
 
-  display: inline-block;
-  content: "";
+.services__list::after:hover {
+  background-color: white;
+}
+.services__list::before:active{
+  opacity: 0.5;
+}
+.services__list::after:active{
+  opacity: 0.5;
+}
+.services__list::before {
+  pointer-events: auto;
 }
 
 .services__list::after {
-  background-image: url("./pics/rightswipe.svg");
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 14px;
-  height: 25.92px;
-  display: inline-block;
-  content: "";
+  pointer-events: auto;
 }
+
+.services__list::before {
+  background-image: url("./pics/leftswipe.svg"); 
+  background-position: center;
+}
+
+.services__list::after {
+  background-image: url("./pics/rightswipe.svg"); 
+  background-position: center;
+}
+/* .services__list:hover::before {
+  opacity: 0.7; 
+  background-color: lightblue; 
+}
+
+.services__list:hover::after {
+  opacity: 0.7; 
+  background-color: lightcoral; 
+}
+
+.services__list::before:active { 
+  opacity: 1;
+  background-color: darkblue;
+}
+
+.services__list::after:active { 
+  opacity: 1; 
+  background-color: darkred;
+} */
 
 .services__list__before {
   display: flex;
@@ -365,11 +441,23 @@ ul {
   border-radius: 5px;
   text-align: center;
   padding: 30px 32px;
+  transition: opacity 0.3s ease;
+} 
+
+.services__list__item:hover{
+  opacity: 0.8; 
+}
+
+.services__list__item:active {
+  opacity: 0.5;
 }
 
 .services__list__image {
   margin-bottom: 21px;
 }
+
+
+
 
 .service__list__item__title {
   margin-bottom: 12px;
@@ -439,6 +527,16 @@ ul {
 
 .price__button:hover{
   cursor:pointer;
+  background-color:rgb(51,51,51) ;
+  color: rgb(255,189,84);
+  transition-duration: 0.3s;
+}
+
+.price__button:hover:active{
+  background-color: rgb(130,130,130);
+  color: rgb(253,213,150);
+  transition-duration: 0.3s;
+
 }
 
 .price__button::before {
@@ -460,6 +558,23 @@ ul {
   display: flex;
   align-items: center;
 }
+.registration:hover{
+  cursor: pointer;
+  background-color: rgb(255,189,84);
+  border-color: rgb(255,189,84);
+  color: rgb(51,51,51);
+  transition-duration: 0.3s;
+}
+
+.registration:hover:active{
+  background-color: rgb(253,213,150);
+  color: rgb(130,130,130);
+  transition-duration: 0.3s;
+}
+
+
+
+
 
 .registration::before {
   background-repeat: no-repeat;
@@ -585,14 +700,56 @@ ul {
   gap: 24px;
   margin-bottom: 109px;
 }
+.creatures__list__iteminfo{
 
-
-.creatures__list__item {
-  border: 1px;
 }
 
+.creatures__list__item {
+  width: 100%;
+  background-color: #fff; 
+  border-radius: 10px;
+  overflow: hidden;  
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  margin-bottom: 20px;  
+  display: flex;  
+  flex-direction: column; 
+}
+
+.creatures__list__item img {
+  width: 100%;  
+  height: auto;  
+  display: block;  
+  border-top-left-radius: 10px;  
+  border-top-right-radius: 10px;
+}
+
+.creatures__list__item:hover{
+  width: 100%;
+  background-color: #fff; 
+  border-radius: 10px;
+  overflow: hidden;  
+  box-shadow: 0 12px 15px rgba(0, 0, 0, 0.1); 
+  margin-bottom: 20px;  
+  display: flex;  
+  flex-direction: column; 
+}
+
+
 .creatures__list__item2 {
-  display: flex;
+  background-color: #fff; 
+  border-radius: 10px;
+  overflow: hidden;  
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  margin-bottom: 20px;  
+  display: flex;  
+}
+.creatures__list__item2:hover {
+  background-color: #fff; 
+  border-radius: 10px;
+  overflow: hidden;  
+  box-shadow: 0 12px 15px rgba(0, 0, 0, 0.1); 
+  margin-bottom: 20px;  
+  display: flex;  
 }
 
 .creatureslist__iteminfo {
@@ -652,6 +809,7 @@ ul {
 .hashtag-time{
   display: flex;
   gap:67px;
+  justify-content: end;
 }
 
 
@@ -762,7 +920,15 @@ ul {
 }
 .question:hover{
   cursor: pointer;
-  /* I could not finish */
+  background-color:rgb(174, 253, 150) ;
+  color: rgb(36, 85, 51);
+  transition-duration: 0.3s;
+}
+
+.question:hover:active{
+  background-color: rgb(102, 189, 88);
+  color: rgb(22, 101, 39);
+  transition-duration: 0.3s;
 }
 
 
@@ -775,9 +941,18 @@ ul {
   gap: 67px;
   padding: 61px 0 69px 0;
 }
-
-.footer__logo__img {
+ 
+.footer__logo__img{
+  transition: opacity 0.3s ease;
   margin-top: -7px;
+}
+
+.footer__logo__img:hover{
+  opacity: 0.8; 
+}
+
+.footer__logo__img:active {
+  opacity: 0.5;
 }
 
 .footernav {
@@ -865,12 +1040,33 @@ ul {
   line-height: 17.95px;
   color: #333333;
 }
+.footercontact__listlink:hover{
+  cursor: pointer;
+  color: rgb(255,189,84);
+}
+
+.footercontact__listlink:hover:active{
+  cursor: pointer;
+  color: rgb(131,131,131);
+}
+
+
+
 
 .navlist__item__link {
   font-size: 16px;
   font-weight: 500;
   line-height: 20.51px;
   color: #333333;
+}
+.navlist__item__link:hover{
+  cursor: pointer;
+  color: rgb(255,189,84);
+}
+
+.navlist__item__link:hover:active{
+  cursor: pointer;
+  color: rgb(131,131,131);
 }
 
 .address {
